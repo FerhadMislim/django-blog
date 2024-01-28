@@ -14,6 +14,10 @@ ENV PYTHONDONTWRITEBYTECODE=1
 # the application crashes without emitting any logs due to buffering.
 ENV PYTHONUNBUFFERED=1
 
+
+ARG ENV
+ENV ENV=$ENV
+
 WORKDIR /app
 
 # Create a non-privileged user that the app will run under.
@@ -45,5 +49,5 @@ COPY . .
 # Expose the port that the application listens on.
 EXPOSE 8001
 
-# Run the application.
-CMD python3 manage.py runserver localhost:8001
+# Run the entrypoint script.
+ENTRYPOINT ["./entrypoint.sh"]
