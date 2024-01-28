@@ -11,8 +11,11 @@ services:
   server:
     build:
       context: .
+      dockerfile: Dockerfile
+    environment:
+      ENV: "local"
     ports:
-      - 8001:8001
+      - 80:8001
 
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to
