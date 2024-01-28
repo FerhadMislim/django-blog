@@ -2,6 +2,8 @@
 *.pyc
 *.sock
 *.swp
-.vscode
-personal_blog/__pycache__/settings.cpython-310.pyc
-*.sqlite3
+
+
+# 12345
+
+**/__pycache__/
