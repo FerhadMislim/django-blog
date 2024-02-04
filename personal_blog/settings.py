@@ -146,3 +146,6 @@ LOGGING = {
         },
     },
 }
+
+# user authentication
+LOGIN_URL = '/login/'   
