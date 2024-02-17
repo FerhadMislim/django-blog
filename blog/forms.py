@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.auth.models import User
 
 class CommentForm(forms.Form):
     author = forms.CharField(
@@ -12,3 +13,20 @@ class CommentForm(forms.Form):
             attrs={"class": "form-control", "placeholder": "Leave a comment!"}
         )
     )
+
+class UserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['username', 'password']
+    
+class UserRegistrationForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = [
+    		    'username', 
+    		    'password', 
+    		    'email', 
+    		    'first_name', 
+    		    'last_name'
+    	] 
+
